@@ -1,0 +1,60 @@
+/* PawLoader (simple, elegant) */
+.paw-loader {
+  display: block;
+  will-change: transform;
+  /* vertical bob */
+  animation: pawBounce 1200ms ease-in-out infinite;
+}
+
+/* pulse for the main pad */
+.paw-pad {
+  transform-origin: 48px 62px; /* center of the pad in SVG coords */
+  animation: padPulse 1000ms ease-in-out infinite;
+}
+
+/* slight staggered pop for toes */
+.paw-toe {
+  transform-origin: center;
+  animation: toePop 1000ms ease-in-out infinite;
+}
+.paw-toe-1 { animation-delay: 0s; }
+.paw-toe-2 { animation-delay: 0.12s; }
+.paw-toe-3 { animation-delay: 0.22s; }
+
+/* keyframes */
+@keyframes pawBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes padPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+@keyframes toePop {
+  0%   { transform: translateY(0) scale(1); opacity: 0.98; }
+  50%  { transform: translateY(-6px) scale(1.06); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.98; }
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .paw-loader,
+  .paw-pad,
+  .paw-toe {
+    animation: none !important;
+  }
+}
+
+/* Hero Section */
+#home{
+  background : url("https://images.pexels.com/photos/169524/pexels-photo-169524.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

@@ -65,7 +65,7 @@ export default function HomeHero() {
               <Button
                 link={"/adopt"}
                 aria-label="Report an injured animal"
-                text={"Find Rescue Centres"}
+                text={"Adopt Strays"}
               />
             </div>
 
